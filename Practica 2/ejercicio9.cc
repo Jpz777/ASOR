@@ -8,13 +8,17 @@ int main(int argc, char **argv)
 {
 unsigned int maj, min;
 
-if(argc != 2)    
+if(argc != 2) {
+	printf("Se necesitan dos parametros\n");
 	return 1;
+}
 
 struct stat fileStat;
 
-if(stat(argv[1],&fileStat) < 0)    
+if(stat(argv[1],&fileStat) < 0) {
+	printf("No es un fichero o directorio\n");   
 	return 1;
+}
 
 maj = major(fileStat.st_dev);
 printf("Major: %i\n", maj);
