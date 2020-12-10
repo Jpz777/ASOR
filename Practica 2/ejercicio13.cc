@@ -33,6 +33,8 @@ c = a + b;
 printf ("A = %i + B = %i: %i\n" , a, b, c);
 printf("Error: %s", strerror(1));
 
+close(fd);
+
 /*
  ls> dirlist 2> & 1 : manda tanto la salida del comando como los errores al fichero dirlist
  ls 2> & 1> dirlist : manda solo la salida del comando al fichero dirlist, porque los errores se mandan primero y los pisa el comando.

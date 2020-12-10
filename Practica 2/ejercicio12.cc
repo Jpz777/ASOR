@@ -30,5 +30,7 @@ b = 20;
 c = a + b;
 printf ("A = %i + B = %i: %i" , a, b, c);
 
+close(fd);
+
 return 1;
 }

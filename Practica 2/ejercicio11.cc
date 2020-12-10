@@ -20,8 +20,6 @@ if(stat(argv[1],&fileStat) < 0) {
 	return 1;
 }
 
-int fd;
-
 char* sys = malloc(sizeof(char)*(5 + strlen(argv[1])));
 strcpy(sys, argv[1]);
 sys = strcat(sys, ".sym");
@@ -29,8 +27,6 @@ sys = strcat(sys, ".sym");
 char* rig = malloc(sizeof(char)*(5 + strlen(argv[1])));
 strcpy(rig, argv[1]);
 rig = strcat(rig, ".hard");
-
-
 
 if((fileStat.st_mode & S_IFMT) == S_IFREG){
 	if (symlink(argv[1], sys) != 0) {

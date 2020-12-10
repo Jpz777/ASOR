@@ -21,7 +21,7 @@ if (fd == -1) {
 
 struct flock fl,fl2;
 
-fl2.l_type   = F_UNLCK;  /* read/write lock */
+fl2.l_type   = F_UNLCK;  /* unlock */
 fl2.l_whence = SEEK_SET; /* beginning of file */
 fl2.l_start  = 0;        /* offset from l_whence */
 fl2.l_len    = 0;        /* length, 0 = to EOF */
@@ -51,6 +51,8 @@ else
 printf("Se libera el cerrojo \n");
 fl.l_type   = F_UNLCK;
 fcntl(fd, F_SETLK, &fl); 
+
+close(fd);
 
 return 1;
 }
