@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <signal.h>
+#include <stdlib.h>
+
+volatile int sigintc = 0;
+volatile int sigtstp = 0;
+
+void addnumsignal(int signal){
+if (signal == SIGINT) 
+	sigintc+=1;
+if (signal == SIGTSTP) 
+	sigtstp+=1;
+}
+
+int main(){
+
+struct sigaction sigact;
+
+sigact.sa_handler = addnumsignal;
+
+sigaction(SIGINT, &sigact, NULL); 
+
+sigaction(SIGTSTP, &sigact, NULL); 
+
+sigset_t blk_set;
+sigemptyset(&blk_set);
+
+while (sigintc + sigtstp < 10)
+	sigsuspend(&blk_set);
+
+printf("Numero de SIGINT: %i\n", sigintc);
+printf("Numero de SIGTSTP: %i\n", sigtstp);
+
+
+return 0;
+}
