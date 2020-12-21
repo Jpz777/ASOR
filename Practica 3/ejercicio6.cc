@@ -10,7 +10,10 @@ int main() {
 
 pid_t pid = fork();
 
-if(pid == 0){ //Hijo
+if(pid == -1){ //Error
+	perror(“fork”);
+}
+else if(pid == 0){ //Hijo
 	int newdir = chdir("/tmp");
 	pid_t newsid = setsid();
 	
