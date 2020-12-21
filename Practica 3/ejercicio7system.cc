@@ -18,5 +18,5 @@ printf("El comando terminó de ejecutarse\n");
 return 0;
 }
 
-//La manera de ejecutar es ./ficheroejecutable "ls -l"
+//La manera de ejecutar es ./ficheroejecutable "ls -l" dado que si se ejecuta de la manera ./ficheroejecutable ls -l, se pasan 3 argumentos y se deberia juntar todo en un string
 //Se ejecuta el printf
