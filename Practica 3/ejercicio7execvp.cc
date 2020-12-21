@@ -14,5 +14,6 @@ printf("El comando terminó de ejecutarse\n");
 
 return 0;
 }
+
 //La manera de ejecutar es ./ficheroejecutable "ls -l"
 //No se ejecuta el printf dado que el execvp reemplaza la imagen del proceso actual con una nueva imagen del proceso
