@@ -24,7 +24,6 @@ if(pid == -1){ //error
 	perror("fork");
 }
 else if(pid == 0){ //hijo
-printf("Soy el hijo\n");
 
 close(pipefd[1]);
 
@@ -40,7 +39,6 @@ else{
 
 }
 else{ //padre
-printf("Soy el padre\n");
 
 close(pipefd[0]);
 
@@ -55,5 +53,5 @@ else {
 }
 
 }
-  
+return 0;
 }
