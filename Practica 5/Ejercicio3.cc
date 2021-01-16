@@ -50,6 +50,6 @@ if(*argv[3] == 'd' || *argv[3] == 't'){
 	buffer[bytes] = '\0';
 	printf( "%s\n", buffer);
 }
-
+close(sfd);
 return 0;
 }

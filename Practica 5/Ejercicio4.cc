@@ -133,5 +133,6 @@ while(1){
 		}
 	}
 }
+close(sfd);
 return 0;
 }

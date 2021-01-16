@@ -94,5 +94,6 @@ while(1){
 		printf("Comando no soportado %d\n", buffer[0]);
 	}
 }
+close(sfd);
 return 0;
 }
