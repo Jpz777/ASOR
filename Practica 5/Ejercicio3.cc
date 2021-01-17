@@ -39,7 +39,7 @@ sfd = socket(result->ai_family, result->ai_socktype, result->ai_protocol);
 freeaddrinfo(result);
 
 struct sockaddr_storage peer_addr;
-socklen_t peer_addr_len;
+socklen_t peer_addr_len = sizeof(struct sockaddr_storage);
 char host[NI_MAXHOST], service[NI_MAXSERV];
 
 sendto(sfd, argv[3], 2, 0, result->ai_addr, result->ai_addrlen);
