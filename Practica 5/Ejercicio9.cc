@@ -90,7 +90,7 @@ while(1){
 			   NI_MAXSERV, NI_NUMERICHOST | NI_NUMERICSERV);
 
 			if (s == 0)
-				printf("Conexión desde %s %s\n", host, service);
+				printf("Conexión desde %s %s con PID %d\n", host, service, getpid());
 			else {
 				fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
 				exit(EXIT_FAILURE);
