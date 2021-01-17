@@ -90,6 +90,10 @@ while(1){
 			} 
 			num_bytes = recv(clisd, buffer, 80, 0);
 			while(num_bytes != 0) {
+				if(buffer[0] == 'Q' && num_bytes == 2){
+					printf("Conexión terminada\n");
+					exit(0);
+				}
 				buffer[num_bytes] = '\0';
 				//printf("\tMensaje: %s\n", buffer);
 				send(clisd, buffer, num_bytes, 0);
