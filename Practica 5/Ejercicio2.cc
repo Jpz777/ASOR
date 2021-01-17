@@ -53,7 +53,7 @@ if (rp == NULL) {               /* No address succeeded */
 
 ssize_t num_bytes;
 struct sockaddr_storage peer_addr;
-socklen_t peer_addr_len;
+socklen_t peer_addr_len = sizeof(struct sockaddr_storage);
 char host[NI_MAXHOST], service[NI_MAXSERV];
 char buffer[2]; /* t, d, q commands */
 
